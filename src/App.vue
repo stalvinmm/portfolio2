@@ -150,41 +150,55 @@
       <section id="experience" class="section-pad" style="background: #fff">
         <v-container>
           <SectionTitle label="Career" title="Work Experience" />
+
           <v-row class="mt-8" justify="center">
             <v-col cols="12" md="8">
               <div class="timeline">
-                <div class="timeline-item animate-slide-up">
+                <div
+                  v-for="(exp, i) in experiences"
+                  :key="i"
+                  class="timeline-item animate-slide-up"
+                  :style="`animation-delay:${i * 0.1}s`"
+                >
                   <div class="timeline-dot"></div>
+
                   <v-card class="timeline-card" variant="flat">
                     <v-card-text class="pa-6">
                       <div
                         class="d-flex flex-wrap align-center justify-space-between mb-2"
                       >
-                        <div class="exp-title">Full Stack Web Developer</div>
-                        <v-chip size="small" color="accent" variant="tonal"
-                          >Nov 2021 – Present</v-chip
-                        >
+                        <div class="exp-title">
+                          {{ exp.role }}
+                        </div>
+
+                        <v-chip size="small" :color="exp.color" variant="tonal">
+                          {{ exp.period }}
+                        </v-chip>
                       </div>
+
                       <div class="exp-company mb-4">
-                        <v-icon size="16" color="primary" class="mr-1"
-                          >mdi-domain</v-icon
+                        <v-icon size="16" color="primary" class="mr-1">
+                          mdi-domain
+                        </v-icon>
+
+                        {{ exp.company }}, {{ exp.location }}
+
+                        <v-chip
+                          size="x-small"
+                          class="ml-2"
+                          color="primary"
+                          variant="outlined"
                         >
-                        Agilets Pvt Ltd, Bengaluru
+                          {{ exp.type }}
+                        </v-chip>
                       </div>
+
                       <ul class="exp-list">
-                        <li>
-                          Enhanced and launched 10+ responsive web modules using
-                          Vue.js, Laravel, and MySQL — improving app performance
-                          by <strong>25%</strong>.
-                        </li>
-                        <li>
-                          Designed reusable components across 5+ major projects,
-                          cutting development time by <strong>30%</strong>.
-                        </li>
-                        <li>
-                          Maintained 100% project documentation; contributed to
-                          internal wikis for team onboarding.
-                        </li>
+                        <li
+                          v-for="(point, idx) in exp.points"
+                          :key="idx"
+                          v-html="point"
+                        ></li>
                       </ul>
                     </v-card-text>
                   </v-card>
@@ -351,6 +365,24 @@ import SectionTitle from "./components/SectionTitle.vue";
 
 const scrolled = ref(false);
 const hoveredProject = ref(null);
+
+const experiences = [
+  {
+    role: "Full Stack Web Developer",
+    company: "Agilets Pvt Ltd",
+    location: "Bengaluru",
+    period: "Nov 2021 – Present",
+    type: "Full Time",
+    color: "accent",
+    points: [
+      `Enhanced and launched <strong>10+ responsive web modules</strong> using Vue.js, Laravel, and MySQL — improving app performance by <strong>25%</strong>.`,
+
+      `Designed reusable components across <strong>5+ major projects</strong>, cutting development time by <strong>30%</strong>.`,
+
+      `Maintained <strong>100% project documentation</strong> and contributed to internal wikis for onboarding.`,
+    ],
+  },
+];
 
 const navLinks = [
   { id: "skills", label: "Skills" },
