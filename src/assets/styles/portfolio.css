@@ -183,6 +183,8 @@ h1,h2,h3,h4,
   letter-spacing: -3px;
   margin-bottom: 24px;
   display: block;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 .text-reveal-line {
   display: block;
@@ -614,3 +616,40 @@ h1,h2,h3,h4,
 
 /* ─── Vuetify color overrides for dark bg ─────────────────── */
 .v-application { background: var(--color-bg) !important; }
+
+/* disable custom cursor on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  body {
+    cursor: auto !important;
+  }
+
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 2.6rem;
+    letter-spacing: -1px;
+    line-height: 1.15;
+  }
+
+  .text-reveal-line {
+    line-height: 1.25;
+  }
+}
+
+.email-btn {
+  max-width: 100%;
+  white-space: normal !important;
+  text-align: center;
+  line-height: 1.2;
+}
+
+@media (max-width: 600px) {
+  .three-canvas {
+    opacity: 0.5;
+  }
+}

@@ -379,9 +379,9 @@
                     rounded="pill"
                     size="large"
                     prepend-icon="mdi-email-outline"
-                    class="magnetic-btn"
+                    class="magnetic-btn email-btn"
                   >
-                    contactstalvin@gmail.com
+                    Email Me
                   </v-btn>
                   <v-btn
                     href="https://linkedin.com/in/stalvinmm"
