@@ -314,7 +314,9 @@
                 Whether you have a project in mind or just want to chat — my
                 inbox is always open.
               </p>
-              <div class="d-flex flex-wrap justify-center gap-4">
+              <div
+                class="d-flex flex-wrap justify-center gap-4 contact-actions"
+              >
                 <v-btn
                   href="mailto:contactstalvin@gmail.com"
                   color="accent"
@@ -322,8 +324,11 @@
                   rounded="pill"
                   size="large"
                   prepend-icon="mdi-email-outline"
-                  >contactstalvin@gmail.com</v-btn
+                  class="contact-btn"
                 >
+                  contactstalvin@gmail.com
+                </v-btn>
+
                 <v-btn
                   href="https://linkedin.com/in/stalvinmm"
                   target="_blank"
@@ -332,12 +337,10 @@
                   rounded="pill"
                   size="large"
                   prepend-icon="mdi-linkedin"
-                  >LinkedIn</v-btn
+                  class="contact-btn"
                 >
-              </div>
-              <div class="mt-6 contact-phone">
-                <v-icon size="16" class="mr-1">mdi-phone</v-icon>
-                +91 8660329470
+                  LinkedIn
+                </v-btn>
               </div>
             </v-col>
           </v-row>
@@ -535,7 +538,7 @@ onUnmounted(() => window.removeEventListener("scroll", onScroll));
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
   --font-display: "Jost", sans-serif;
@@ -988,5 +991,32 @@ h4,
 .project-card:hover .project-emoji {
   opacity: 0;
   transform: scale(0.8);
+}
+
+.contact-actions {
+  width: 100%;
+}
+
+.contact-btn {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.contact-btn .v-btn__content {
+  white-space: normal !important;
+  word-break: break-word;
+  text-align: center;
+  line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+  .contact-btn {
+    width: 100%;
+    font-size: 0.78rem !important;
+  }
+
+  .contact-btn .v-btn__content {
+    justify-content: center;
+  }
 }
 </style>
