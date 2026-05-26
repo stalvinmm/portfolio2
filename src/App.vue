@@ -350,7 +350,7 @@
         <v-container
           class="d-flex flex-wrap align-center justify-space-between"
         >
-          <span class="footer-logo">SM</span>
+          <span class="footer-logo">SMM</span>
           <span class="footer-copy">© 2026 Stalvin Melron Menezes</span>
           <span class="footer-made">Made with Vue 3 + Vuetify 3</span>
         </v-container>
