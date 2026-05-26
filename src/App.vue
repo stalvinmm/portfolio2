@@ -535,9 +535,11 @@ onUnmounted(() => window.removeEventListener("scroll", onScroll));
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
-  --font-display: "Syne", sans-serif;
-  --font-body: "DM Sans", sans-serif;
+  --font-display: "Jost", sans-serif;
+  --font-body: "Jost", sans-serif;
   --color-accent: #e94560;
   --color-primary: #1a1a2e;
   --color-bg: #f7f7f9;

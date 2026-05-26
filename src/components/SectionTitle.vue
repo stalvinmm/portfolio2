@@ -17,7 +17,6 @@ defineProps({
 <style scoped>
 .section-title-wrap { text-align: center; margin-bottom: 8px; }
 .section-label {
-  font-family: 'Syne', sans-serif;
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -27,7 +26,6 @@ defineProps({
 }
 .section-label--dark { color: rgba(233,69,96,0.8); }
 .section-heading {
-  font-family: 'Syne', sans-serif;
   font-size: clamp(1.8rem, 3.5vw, 2.8rem);
   font-weight: 800;
   color: #1A1A2E;
