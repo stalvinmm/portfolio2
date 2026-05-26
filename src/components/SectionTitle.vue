@@ -1,8 +1,8 @@
 <template>
-  <div class="section-title-wrap animate-fade-up">
-    <div class="section-label" :class="{ 'section-label--dark': dark }">{{ label }}</div>
-    <h2 class="section-heading" :class="{ 'section-heading--dark': dark }">{{ title }}</h2>
-    <div class="section-line" :class="{ 'section-line--dark': dark }"></div>
+  <div class="section-title-wrap">
+    <div class="section-label">{{ label }}</div>
+    <h2 class="section-title-text" :class="{ dark: dark }">{{ title }}</h2>
+    <div class="section-line"></div>
   </div>
 </template>
 
@@ -10,35 +10,38 @@
 defineProps({
   label: String,
   title: String,
-  dark: Boolean,
+  dark: { type: Boolean, default: false },
 })
 </script>
 
 <style scoped>
-.section-title-wrap { text-align: center; margin-bottom: 8px; }
+.section-title-wrap { text-align: center; }
+
 .section-label {
-  font-size: 0.75rem;
+  font-family: "Syne", "Jost", sans-serif;
+  font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 3px;
-  color: #E94560;
+  color: #e94560;
   margin-bottom: 10px;
 }
-.section-label--dark { color: rgba(233,69,96,0.8); }
-.section-heading {
-  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+
+.section-title-text {
+  font-family: "Syne", "Jost", sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
   font-weight: 800;
-  color: #1A1A2E;
+  color: #ffffff;
   letter-spacing: -1.5px;
   line-height: 1.1;
+  margin-bottom: 16px;
 }
-.section-heading--dark { color: #fff; }
+
 .section-line {
-  width: 48px;
+  width: 40px;
   height: 3px;
-  background: #E94560;
+  background: linear-gradient(90deg, #e94560, #4a00e0);
   border-radius: 2px;
-  margin: 16px auto 0;
+  margin: 0 auto;
 }
-.section-line--dark { background: rgba(233,69,96,0.7); }
 </style>
