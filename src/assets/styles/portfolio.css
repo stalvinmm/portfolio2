@@ -679,3 +679,39 @@ h1,h2,h3,h4,
 .mdi-menu {
   color: #fff !important;
 }
+
+.mobile-drawer {
+  background: rgba(10, 10, 25, 0.92) !important;
+  backdrop-filter: blur(18px);
+  border-left: 1px solid rgba(255,255,255,0.08);
+  color: white;
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.drawer-logo {
+  font-size: 1.2rem;
+  font-weight: 800;
+  font-family: var(--font-display);
+}
+
+.drawer-links {
+  padding-top: 20px;
+}
+
+.drawer-item {
+  margin: 6px 12px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.drawer-item:hover {
+  background: rgba(233,69,96,0.15);
+  transform: translateX(6px);
+}

@@ -10,6 +10,33 @@
     </div>
 
     <v-app>
+      <v-navigation-drawer
+        v-model="mobileMenu"
+        temporary
+        location="right"
+        class="mobile-drawer"
+      >
+        <div class="drawer-header">
+          <span class="drawer-logo">SMM</span>
+          <v-btn icon variant="text" @click="mobileMenu = false">
+            <v-icon>mdi-close</v-icon>
+          </v-btn>
+        </div>
+
+        <v-list class="drawer-links">
+          <v-list-item
+            v-for="link in navLinks"
+            :key="link.id"
+            @click="
+              scrollTo(link.id);
+              mobileMenu = false;
+            "
+            class="drawer-item"
+          >
+            <v-list-item-title>{{ link.label }}</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-navigation-drawer>
       <!-- Nav -->
       <v-app-bar
         flat
@@ -39,27 +66,14 @@
           >
             Hire Me
           </v-btn>
-          <v-menu>
-            <template #activator="{ props }">
-              <v-btn
-                v-bind="props"
-                icon
-                class="d-flex d-md-none"
-                variant="text"
-              >
-                <v-icon>mdi-menu</v-icon>
-              </v-btn>
-            </template>
-            <v-list rounded="lg">
-              <v-list-item
-                v-for="link in navLinks"
-                :key="link.id"
-                @click="scrollTo(link.id)"
-              >
-                <v-list-item-title>{{ link.label }}</v-list-item-title>
-              </v-list-item>
-            </v-list>
-          </v-menu>
+          <v-btn
+            class="d-flex d-md-none"
+            icon
+            variant="text"
+            @click="mobileMenu = true"
+          >
+            <v-icon color="white">mdi-menu</v-icon>
+          </v-btn>
         </v-container>
       </v-app-bar>
 
@@ -465,6 +479,7 @@ const threeCanvas = ref(null);
 const transitionOverlay = ref(null);
 const activeModal = ref(null);
 const scrolled = ref(false);
+const mobileMenu = ref(false);
 
 // ─── Data ────────────────────────────────────────────────
 const navLinks = [
