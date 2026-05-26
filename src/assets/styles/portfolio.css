@@ -631,17 +631,19 @@ h1,h2,h3,h4,
 
 @media (max-width: 600px) {
   .hero-title {
-    font-size: 2.2rem;   /* smaller so it fits naturally */
-    line-height: 1.2;
+    font-size: 2.2rem;
+    line-height: 1.15;
     letter-spacing: -0.5px;
   }
 
-  .hero-title .text-reveal-line {
-    line-height: 1.15;
+  .hero-title .text-reveal-inner {
+    white-space: normal;   /* IMPORTANT: remove nowrap */
+    word-break: break-word;
+    overflow-wrap: anywhere;
   }
 
-  .hero-title .text-reveal-inner {
-    white-space: nowrap; /* prevents ugly word breaking */
+  .text-reveal-line {
+    line-height: 1.2;
   }
 }
 
