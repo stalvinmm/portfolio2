@@ -405,7 +405,7 @@
         <!-- Footer -->
         <footer class="footer">
           <v-container
-            class="d-flex flex-wrap align-center justify-space-between"
+            class="footer-container d-flex align-center justify-space-between"
           >
             <span class="footer-logo">SMM</span>
             <span class="footer-copy">© 2026 Stalvin Melron Menezes</span>

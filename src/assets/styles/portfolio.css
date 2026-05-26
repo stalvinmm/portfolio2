@@ -631,13 +631,17 @@ h1,h2,h3,h4,
 
 @media (max-width: 600px) {
   .hero-title {
-    font-size: 2.6rem;
-    letter-spacing: -1px;
+    font-size: 2.2rem;   /* smaller so it fits naturally */
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+  }
+
+  .hero-title .text-reveal-line {
     line-height: 1.15;
   }
 
-  .text-reveal-line {
-    line-height: 1.25;
+  .hero-title .text-reveal-inner {
+    white-space: nowrap; /* prevents ugly word breaking */
   }
 }
 
@@ -651,5 +655,22 @@ h1,h2,h3,h4,
 @media (max-width: 600px) {
   .three-canvas {
     opacity: 0.5;
+  }
+}
+
+.footer-container {
+  gap: 12px;
+}
+
+/* Mobile: stack vertically */
+@media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column !important;
+    text-align: center;
+    justify-content: center !important;
+  }
+
+  .footer-container span {
+    width: 100%;
   }
 }
