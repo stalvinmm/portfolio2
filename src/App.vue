@@ -738,6 +738,7 @@ h4,
 .hero-container {
   position: relative;
   z-index: 1;
+  padding: 20px;
 }
 
 /* Sections */
