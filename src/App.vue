@@ -360,17 +360,6 @@
                 </p>
                 <div class="d-flex flex-wrap justify-center gap-4">
                   <v-btn
-                    href="mailto:contactstalvin@gmail.com"
-                    color="accent"
-                    variant="flat"
-                    rounded="pill"
-                    size="large"
-                    prepend-icon="mdi-email-outline"
-                    class="magnetic-btn email-btn"
-                  >
-                    Email Me
-                  </v-btn>
-                  <v-btn
                     href="https://linkedin.com/in/stalvinmm"
                     target="_blank"
                     color="white"
@@ -379,8 +368,35 @@
                     size="large"
                     prepend-icon="mdi-linkedin"
                     class="magnetic-btn"
+                    style="width: 60%;"
                   >
                     LinkedIn
+                  </v-btn>
+                  <v-btn
+                    href="mailto:contactstalvin@gmail.com"
+                    color="accent"
+                    variant="flat"
+                    rounded="pill"
+                    size="large"
+                    prepend-icon="mdi-email-outline"
+                    class="magnetic-btn email-btn"
+                    style="width: 60%;"
+                  >
+                    Email Me
+                  </v-btn>
+                  
+                  <v-btn
+                    href="https://github.com/stalvinmm"
+                    target="_blank"
+                    color="white"
+                    variant="outlined"
+                    rounded="pill"
+                    size="large"
+                    prepend-icon="mdi-github"
+                    class="magnetic-btn"
+                    style="width: 60%;"
+                  >
+                    Github
                   </v-btn>
                 </div>
               </v-col>
