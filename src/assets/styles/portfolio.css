@@ -680,38 +680,81 @@ h1,h2,h3,h4,
   color: #fff !important;
 }
 
-.mobile-drawer {
-  background: rgba(10, 10, 25, 0.92) !important;
-  backdrop-filter: blur(18px);
-  border-left: 1px solid rgba(255,255,255,0.08);
-  color: white;
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(14px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
 }
 
-.drawer-header {
+.menu-panel {
+  width: 85%;
+  max-width: 420px;
+  background: rgba(13, 13, 31, 0.9);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  animation: popIn 0.35s ease;
+}
+
+.menu-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 20px;
 }
 
-.drawer-logo {
+.menu-logo {
   font-size: 1.2rem;
   font-weight: 800;
   font-family: var(--font-display);
+  color: white;
 }
 
-.drawer-links {
-  padding-top: 20px;
+.menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
-.drawer-item {
-  margin: 6px 12px;
+.menu-item {
+  padding: 12px 14px;
   border-radius: 12px;
-  transition: 0.3s;
+  color: var(--color-text);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
 }
 
-.drawer-item:hover {
+.menu-item:hover {
   background: rgba(233,69,96,0.15);
   transform: translateX(6px);
+  color: white;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* transition */
+.menu-fade-enter-active,
+.menu-fade-leave-active {
+  transition: opacity 0.25s ease;
+}
+
+.menu-fade-enter-from,
+.menu-fade-leave-to {
+  opacity: 0;
 }

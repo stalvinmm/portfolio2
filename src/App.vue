@@ -10,33 +10,6 @@
     </div>
 
     <v-app>
-      <v-navigation-drawer
-        v-model="mobileMenu"
-        temporary
-        location="right"
-        class="mobile-drawer"
-      >
-        <div class="drawer-header">
-          <span class="drawer-logo">SMM</span>
-          <v-btn icon variant="text" @click="mobileMenu = false">
-            <v-icon>mdi-close</v-icon>
-          </v-btn>
-        </div>
-
-        <v-list class="drawer-links">
-          <v-list-item
-            v-for="link in navLinks"
-            :key="link.id"
-            @click="
-              scrollTo(link.id);
-              mobileMenu = false;
-            "
-            class="drawer-item"
-          >
-            <v-list-item-title>{{ link.label }}</v-list-item-title>
-          </v-list-item>
-        </v-list>
-      </v-navigation-drawer>
       <!-- Nav -->
       <v-app-bar
         flat
@@ -427,6 +400,38 @@
           </v-container>
         </footer>
       </v-main>
+
+      <Transition name="menu-fade">
+        <div
+          v-if="mobileMenu"
+          class="menu-overlay"
+          @click.self="mobileMenu = false"
+        >
+          <div class="menu-panel">
+            <div class="menu-header">
+              <span class="menu-logo">SMM</span>
+
+              <v-btn icon variant="text" @click="mobileMenu = false">
+                <v-icon color="white">mdi-close</v-icon>
+              </v-btn>
+            </div>
+
+            <div class="menu-links">
+              <div
+                v-for="link in navLinks"
+                :key="link.id"
+                class="menu-item"
+                @click="
+                  scrollTo(link.id);
+                  mobileMenu = false;
+                "
+              >
+                {{ link.label }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </Transition>
     </v-app>
 
     <!-- Project Modal -->
